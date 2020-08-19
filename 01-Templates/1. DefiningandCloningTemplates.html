@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defining and Cloning Templates</title>
+</head>
+<body>
+    <!-- This is the template -->
+    <template>
+        <p>You can't see me because I'm <strong>in a template!</strong></p>
+        <script>
+            alert('This will not alert until cloned');
+        </script>
+        <img src="img/path.jpg" alt="not existing image">
+    </template>
+
+    <p> This paragraph is the body</p>
+    <script>
+        // Gets the template 
+        var template = document.querySelector('template');
+
+         //note that this works
+            p = document.querySelector('p');
+            console.log(p); 
+
+        // But this gets nothing 
+        var p = document.querySelector('template p');
+        console.log(p);
+
+        // Instead, to access content, need to use content property
+        console.log(template.content);
+    </script>
+
+</body>
+</html>
